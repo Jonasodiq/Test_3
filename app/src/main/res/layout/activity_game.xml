@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -81,31 +82,31 @@
         app:layout_constraintTop_toBottomOf="@id/linearLayout">
 
         <ImageView
-            android:id="@+id/heartIcon"
+            android:id="@+id/heartsIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/ic_heart" />
 
         <ImageView
-            android:id="@+id/diamondIcon"
+            android:id="@+id/diamondsIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/ic_heart" />
+            android:src="@drawable/ic_diamonds" />
 
         <ImageView
-            android:id="@+id/clubIcon"
+            android:id="@+id/clubsIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/ic_heart" />
+            android:src="@drawable/ic_clubs" />
 
         <ImageView
-            android:id="@+id/spadeIcon"
+            android:id="@+id/spadesIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ic_heart" />
+            android:src="@drawable/ic_spades" />
     </LinearLayout>
 
     <!-- Back Button -->
