@@ -15,14 +15,15 @@ class ActivityGame : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_game)
 
-        // Hantera systemfält för Edge-to-Edge design
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-
-        // Hitta back-knappen
+        // Koppla layout-element
+        val cardImageView = findViewById<ImageView>(R.id.cardImage)
+        val scoreTextView = findViewById<TextView>(R.id.scoreText)
+        val guessRedButton = findViewById<Button>(R.id.guessRedButton)
+        val guessBlackButton = findViewById<Button>(R.id.guessBlackButton)
+        val guessHeartButton = findViewById<ImageView>(R.id.heartsIcon)
+        val guessDiamondButton = findViewById<ImageView>(R.id.diamondsIcon)
+        val guessClubButton = findViewById<ImageView>(R.id.clubsIcon)
+        val guessSpadeButton = findViewById<ImageView>(R.id.spadesIcon)
         val backButton = findViewById<Button>(R.id.backButton)
 
         // Lägg till en click listener på Back-knappen för att navigera tillbaka
