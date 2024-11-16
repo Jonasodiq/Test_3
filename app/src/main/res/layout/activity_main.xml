@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Färg / Svit"
+        android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
+        android:letterSpacing="0.1"
+        android:lineSpacingExtra="4dp"
+        android:accessibilityHeading="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/playButton"
+        style="@style/Widget.Material3.Button.UnelevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Play"
+        android:contentDescription="Spela spelet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appTitle" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settingsButton"
+        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Inställningar"
+        android:contentDescription="Öppna inställningar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/aboutButton"
+        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Om Appen"
+        android:contentDescription="Information om appen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settingsButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
