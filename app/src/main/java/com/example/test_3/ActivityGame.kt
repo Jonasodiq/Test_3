@@ -14,6 +14,17 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
 
 class ActivityGame : AppCompatActivity() {
+
+    private val cards = listOf(
+        Pair(R.drawable.hearts_k, "Hjärter"),
+        Pair(R.drawable.diamonds_k, "Ruter"),
+        Pair(R.drawable.clubs_k, "Klöver"),
+        Pair(R.drawable.spades_k, "Spader")
+    )
+
+    private var score = 0
+    private var currentCardIndex = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
