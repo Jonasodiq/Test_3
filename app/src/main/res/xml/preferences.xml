@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreferenceCompat
+        android:key="example_switch"
+        android:title="Exempel Switch"
+        android:summary="Slå på eller av detta alternativ"
+        android:defaultValue="false" />
+
+    <EditTextPreference
+        android:key="example_text"
+        android:title="Redigera Text"
+        android:summary="Ange ditt namn"
+        android:defaultValue=""
+        android:inputType="text" />
+
+    <PreferenceCategory android:title="Övriga Inställningar">
+
+        <ListPreference
+            android:key="example_list"
+            android:title="Välj ett alternativ"
+            android:summary="Visa tillgängliga alternativ"
+            android:entries="@array/example_list_entries"
+            android:entryValues="@array/example_list_values"
+            android:defaultValue="1" />
+
+    </PreferenceCategory>
+</androidx.preference.PreferenceScreen>

@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Test-3</string>
+    <string-array name="example_list_entries">
+        <item>Alternativ 1</item>
+        <item>Alternativ 2</item>
+        <item>Alternativ 3</item>
+    </string-array>
+
+    <string-array name="example_list_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>

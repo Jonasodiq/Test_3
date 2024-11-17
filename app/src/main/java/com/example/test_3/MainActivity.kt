@@ -61,8 +61,12 @@ class MainActivity : AppCompatActivity() {
      * Öppnar inställningar (kommande funktionalitet)
      */
     private fun openSettings() {
-        // Här kan du lägga till navigering till en inställnings-aktivitet
-        Log.i(TAG, "Inställningar öppnades (inte implementerat ännu).")
+        try {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        } catch (e: Exception) {
+            Log.i(TAG, "IKunde inte starta SettingsActivity.")
+        }
     }
 
     /**
@@ -70,7 +74,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun showAboutDialog() {
         AlertDialog.Builder(this)
-            .setTitle("Om Appen")
+            .setTitle("Om Spelet")
             .setMessage("Den här appen är ett spel där du gissar kortets färg eller svit. Ha kul!")
             .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
             .show()
