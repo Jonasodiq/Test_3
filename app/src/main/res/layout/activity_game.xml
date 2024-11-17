@@ -25,17 +25,15 @@
             android:id="@+id/cardBack"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="Visar aktuellt kort baksida"
-            android:src="@drawable/red_heart"
-            android:visibility="visible" />
+            android:src="@drawable/back"
+            />
 
         <!-- Framsidan av kortet -->
         <ImageView
             android:id="@+id/cardFront"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="Visar aktuellt kort front"
-            android:visibility="gone"/>
+            />
 
     </androidx.cardview.widget.CardView>
 
