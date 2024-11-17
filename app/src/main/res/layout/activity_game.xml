@@ -20,12 +20,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <!-- Baksidan av kortet -->
         <ImageView
-            android:id="@+id/cardImage"
+            android:id="@+id/cardBack"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="Visar aktuellt kort"
-            android:src="@drawable/red_heart" />
+            android:contentDescription="Visar aktuellt kort baksida"
+            android:src="@drawable/red_heart"
+            android:visibility="visible" />
+
+        <!-- Framsidan av kortet -->
+        <ImageView
+            android:id="@+id/cardFront"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="Visar aktuellt kort front"
+            android:visibility="gone"/>
 
     </androidx.cardview.widget.CardView>
 
