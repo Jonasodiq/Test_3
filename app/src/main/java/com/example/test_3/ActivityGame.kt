@@ -88,9 +88,7 @@ class ActivityGame : AppCompatActivity() {
         }
     }
 
-    /**
-     * Uppdatera bilden för kortet
-     */
+    // Uppdatera bilden för kortet
     private fun updateCardImage() {
         currentCardIndex = Random.nextInt(cards.size)
         val newCard = cards[currentCardIndex]
