@@ -92,7 +92,7 @@ class ActivityGame : AppCompatActivity() {
     private fun updateCardImage() {
         currentCardIndex = Random.nextInt(cards.size)
         val newCard = cards[currentCardIndex]
-        cardFront.setImageResource(newCard.first)
+        cardFront.setImageResource(newCard.first) // Ställ in bilden för det nya kortet
     }
 
     /**
