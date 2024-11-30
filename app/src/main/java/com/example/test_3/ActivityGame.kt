@@ -117,21 +117,19 @@ class ActivityGame : AppCompatActivity() {
         }
     }
 
-    /**
-     * Avsluta spelet
-     */
+    // Avsluta spelet
     private fun endGame(isWin: Boolean) {
         val message = if (isWin) {
-            "Grattis! Du vann spelet med 21 poäng!"
+            "Congratulations! You won the game with 21 points!"
         } else {
-            "Spelet är över. Du förlorade eftersom din poäng ${if (score > 21) "överstiger 21" else "är under 0"}."
+            "The game is over. You lost because your score ${if (score > 21) "exceeds 21" else "is below 0"}."
         }
 
         AlertDialog.Builder(this)
-            .setTitle(if (isWin) "Du vann!" else "Spelet över")
+            .setTitle(if (isWin) "You won!" else "Game over")
             .setMessage(message)
             .setCancelable(false)
-            .setPositiveButton("Tillbaka menyn") { _, _ ->
+            .setPositiveButton("Menu") { _, _ ->
                 finish()
             }
             .show()
