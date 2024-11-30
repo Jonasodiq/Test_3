@@ -105,17 +105,15 @@ class ActivityGame : AppCompatActivity() {
         }
     }
 
-    /**
-     * Uppdatera poäng
-     */
+    // Uppdatera poäng
     private fun updateScore(value: Int, scoreTextView: TextView) {
         score += value
-        scoreTextView.text = "Poäng: $score"
+        scoreTextView.text = "$score"
 
         // Kontrollera om spelaren vinner eller förlorar
         when {
             score == 21 -> endGame(true) // Spelaren vinner exakt 21
-            score > 21 || score < 0 -> endGame(false)  // Spelaren förlorar
+            score  > 21 || score < 0 -> endGame(false)  // Spelaren förlorar
         }
     }
 
