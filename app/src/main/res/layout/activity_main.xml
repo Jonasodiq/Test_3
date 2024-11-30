@@ -11,16 +11,20 @@
         android:id="@+id/appTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Färg / Svit"
-        android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
-        android:letterSpacing="0.1"
-        android:lineSpacingExtra="4dp"
+        android:layout_marginTop="96dp"
         android:accessibilityHeading="true"
-        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/kavoon"
+        android:letterSpacing="0.1"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/app_title"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
+        android:textColor="#2196F3"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/playButton"
@@ -28,10 +32,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Play"
-        android:contentDescription="Spela spelet"
-        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/start_play"
+        android:text="@string/play"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appTitle" />
 
     <com.google.android.material.button.MaterialButton
@@ -40,10 +45,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Inställningar"
-        android:contentDescription="Öppna inställningar"
-        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/open_settings"
+        android:text="@string/settings"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/playButton" />
 
     <com.google.android.material.button.MaterialButton
@@ -52,10 +58,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Om Spelet"
-        android:contentDescription="Information om appen"
-        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/info_about_the_app"
+        android:text="@string/about"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/settingsButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
