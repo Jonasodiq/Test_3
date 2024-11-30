@@ -3,23 +3,16 @@
 
     <SwitchPreferenceCompat
         android:key="example_switch"
-        android:title="Exempel Switch"
-        android:summary="Slå på eller av detta alternativ"
+        android:title="@string/sound"
+        android:summary="@string/turn_the_sound"
         android:defaultValue="false" />
 
-    <EditTextPreference
-        android:key="example_text"
-        android:title="Redigera Text"
-        android:summary="Ange ditt namn"
-        android:defaultValue=""
-        android:inputType="text" />
-
-    <PreferenceCategory android:title="Övriga Inställningar">
+    <PreferenceCategory android:title="@string/other_settings">
 
         <ListPreference
             android:key="example_list"
-            android:title="Välj ett alternativ"
-            android:summary="Visa tillgängliga alternativ"
+            android:title="@string/select_an_option"
+            android:summary="@string/view_available_options"
             android:entries="@array/example_list_entries"
             android:entryValues="@array/example_list_values"
             android:defaultValue="1" />

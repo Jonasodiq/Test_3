@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             val settingsButton = findViewById<Button>(R.id.settingsButton)
             val aboutButton = findViewById<Button>(R.id.aboutButton)
 
-            // Sätt upp klickhanterare
+            // ClickListener
             playButton.setOnClickListener {
                 navigateToGameActivity()
             }
@@ -41,41 +41,36 @@ class MainActivity : AppCompatActivity() {
             aboutButton.setOnClickListener {
                 showAboutDialog()
             }
+
         } catch (e: Exception) {
-            Log.e(TAG, "Fel vid initialisering: ${e.message}", e)
+            Log.e(TAG, "Error during initialization: ${e.message}", e)
         }
     }
-    /**
-     * Navigerar till ActivityGame
-     */
+    // ActivityGame
     private fun navigateToGameActivity() {
         try {
             val intent = Intent(this, ActivityGame::class.java)
             startActivity(intent)
         } catch (e: Exception) {
-            Log.e(TAG, "Kunde inte starta ActivityGame: ${e.message}", e)
+            Log.e(TAG, "Could not start ActivityGame: ${e.message}", e)
         }
     }
 
-    /**
-     * Öppnar inställningar (kommande funktionalitet)
-     */
+    // Opens settings
     private fun openSettings() {
         try {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         } catch (e: Exception) {
-            Log.i(TAG, "IKunde inte starta SettingsActivity.")
+            Log.i(TAG, "Could not start SettingsActivity.")
         }
     }
 
-    /**
-     * Visar en enkel dialog om appen
-     */
+    // Display dialog about the app
     private fun showAboutDialog() {
         AlertDialog.Builder(this)
-            .setTitle("Om Spelet")
-            .setMessage("Den här appen är ett spel där du gissar kortets färg eller svit. Ha kul!")
+            .setTitle("About the Game")
+            .setMessage("This app is a game where you guess the suit or suit of the card. \n+1 point for the correct color.\n+5 points for the right suite.\n-1 for mistakes.\n21 points for win If you have above than 21 points you lose. Have fun!")
             .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
             .show()
     }

@@ -13,13 +13,12 @@ class SettingsActivity : AppCompatActivity() {
             .beginTransaction()
             .replace(android.R.id.content, SettingsFragment())
             .commit()
-        // Aktivera "up"-knappen
+        // Activate the "up" button
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-                // Navigera tillbaka till föregående aktivitet
                 finish()
                 true
             }
@@ -29,7 +28,7 @@ class SettingsActivity : AppCompatActivity() {
 
     class SettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-            // Ladda preferenser från XML
+            // Load preferences from XML
             setPreferencesFromResource(R.xml.preferences, rootKey)
         }
     }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Test-3</string>
+    <string name="score">0</string>
+    <string name="dsc_back">Bak sida</string>
+    <string name="dsc_front">fram sida</string>
+    <string name="dscScore">poäng</string>
+    <string name="dscRedButton">röd knapp</string>
+    <string name="dscBlackButton">Svart knapp</string>
+    <string name="dscHeartIcon">hjärtan</string>
+    <string name="dscdiamondIcon">ruter</string>
+    <string name="dscClubIcon">klubbar</string>
+    <string name="dscSpadeIcon">spader</string>
+    <string name="dscBackButton">till menyn</string>
+    <string name="back">Tillbaks</string>
+    <string name="black">Svart</string>
+    <string name="red">Röd</string>
+    <string name="app_title">Färg\neller Svit</string>
+    <string name="settings">Inställningar</string>
+    <string name="about">Om spelet</string>
+    <string name="points_text">Poäng</string>
+    <string name="play">Play</string>
+    <string name="start_play">Start_play</string>
+    <string name="open_settings">Open settings</string>
+    <string name="info_about_the_app">Info about the app</string>
+    <string name="color_or_suit">Färg eller Svit</string>
+    <string name="sound">Ljud</string>
+    <string name="turn_the_sound">Slå på eller av ljudet</string>
+    <string name="other_settings">Andra inställningar</string>
+    <string name="select_an_option">Välj ett alternativ</string>
+    <string name="view_available_options">Visa tillgängliga alternativ</string>
+
+    <string-array name="example_list_entries">
+        <item>Alternativ 1</item>
+        <item>Alternativ 2</item>
+        <item>Alternativ 3</item>
+    </string-array>
+
+    <string-array name="example_list_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+</resources>
