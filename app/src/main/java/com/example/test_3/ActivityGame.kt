@@ -64,8 +64,17 @@ class ActivityGame : AppCompatActivity() {
             handleButtonClick("Clover", +5, scoreTextView)
         }
         guessSpadeButton.setOnClickListener {
-            if (isGuessCorrect("Spader")) {
-                updateScore(+5, scoreTextView)
+            handleButtonClick("Spades", +5, scoreTextView)
+        }
+
+        backButton.setOnClickListener { finish() }
+    }
+
+    // Klick metod
+    private fun handleButtonClick(guess: String, scoreIncrement: Int, scoreTextView: TextView) {
+        flipToFront {
+            if (isGuessCorrect(guess)) {
+                updateScore(scoreIncrement, scoreTextView)
             } else {
                 updateScore(-1, scoreTextView)
             }
