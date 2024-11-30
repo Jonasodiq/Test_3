@@ -95,15 +95,13 @@ class ActivityGame : AppCompatActivity() {
         cardFront.setImageResource(newCard.first) // Ställ in bilden för det nya kortet
     }
 
-    /**
-     * Kontrollera om gissningen är korrekt
-     */
+    // Kontrollera om gissningen är korrekt
     private fun isGuessCorrect(guess: String): Boolean {
         val cardSuit = cards[currentCardIndex].second
         return when (guess) {
-            "Röd" -> cardSuit == "Hjärter" || cardSuit == "Ruter"
-            "Svart" -> cardSuit == "Klöver" || cardSuit == "Spader"
-            else -> cardSuit == guess
+              "Red" -> cardSuit == "Hearts" || cardSuit == "Diamonds"
+            "Black" -> cardSuit == "Clover" || cardSuit == "Spades"
+              else  -> cardSuit == guess
         }
     }
 
