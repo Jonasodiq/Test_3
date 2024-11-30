@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -11,71 +10,82 @@
     <!-- Card -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardImageContainer"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/card_width"
+        android:layout_height="@dimen/card_height"
+        android:layout_marginTop="32dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playTextView">
 
         <!-- Baksidan av kortet -->
         <ImageView
             android:id="@+id/cardBack"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/back"
-            />
+            android:contentDescription="@string/dsc_back"
+            android:src="@drawable/back" />
 
         <!-- Framsidan av kortet -->
         <ImageView
             android:id="@+id/cardFront"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            android:contentDescription="@string/dsc_front" />
 
     </androidx.cardview.widget.CardView>
 
     <!-- Score -->
+
+    <!-- Guess Buttons -->
+
     <TextView
         android:id="@+id/scoreText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="32dp"
-        android:text="Poäng: 0"
+        android:contentDescription="@string/dscScore"
+        android:text="@string/score"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardImageContainer" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/pointTextView"
+        app:layout_constraintTop_toBottomOf="@+id/cardImageContainer" />
 
-    <!-- Guess Buttons -->
     <LinearLayout
         android:id="@+id/linearLayout"
+        style="?android:attr/buttonBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scoreText">
+        app:layout_constraintTop_toBottomOf="@+id/pointTextView">
 
         <Button
             android:id="@+id/guessRedButton"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
-            android:backgroundTint="@color/red"
-            android:text="Red"
-            android:textColor="@android:color/white" />
+            android:backgroundTint="@color/holo_red_dark"
+            android:contentDescription="@string/dscRedButton"
+            android:text="@string/red"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/guessBlackButton"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black"
-            android:text="Black"
-            android:textColor="@android:color/white" />
+            android:contentDescription="@string/dscBlackButton"
+            android:text="@string/black"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <!-- Suit Icons -->
@@ -87,13 +97,16 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <ImageView
             android:id="@+id/heartsIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="8dp"
+            android:background="@drawable/icon_background"
+            android:contentDescription="@string/dscHeartIcon"
+            android:padding="6dp"
             android:src="@drawable/ic_heart" />
 
         <ImageView
@@ -101,6 +114,9 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="8dp"
+            android:background="@drawable/icon_background"
+            android:contentDescription="@string/dscdiamondIcon"
+            android:padding="6dp"
             android:src="@drawable/ic_diamonds" />
 
         <ImageView
@@ -108,12 +124,18 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="8dp"
+            android:background="@drawable/icon_background"
+            android:contentDescription="@string/dscClubIcon"
+            android:padding="6dp"
             android:src="@drawable/ic_clubs" />
 
         <ImageView
             android:id="@+id/spadesIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:background="@drawable/icon_background"
+            android:contentDescription="@string/dscSpadeIcon"
+            android:padding="6dp"
             android:src="@drawable/ic_spades" />
     </LinearLayout>
 
@@ -124,10 +146,40 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/black"
-        android:text="Back"
+        android:contentDescription="@string/dscBackButton"
+        android:text="@string/back"
         android:textColor="@android:color/white"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/IconLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/IconLayout" />
+
+    <TextView
+        android:id="@+id/pointTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:letterSpacing="0.1"
+        android:text="@string/points_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardImageContainer" />
+
+    <TextView
+        android:id="@+id/playTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/kavoon"
+        android:letterSpacing="0.2"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/color_or_suit"
+        android:textColor="#2196F3"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
