@@ -18,10 +18,10 @@ import kotlin.random.Random
 class ActivityGame : AppCompatActivity() {
 
     private val cards = listOf(
-        Pair(R.drawable.hearts_k, "Hjärter"),
-        Pair(R.drawable.diamonds_k, "Ruter"),
-        Pair(R.drawable.clubs_k, "Klöver"),
-        Pair(R.drawable.spades_k, "Spader")
+        Pair(R.drawable.hearts_k, "Hearts"),
+        Pair(R.drawable.diamonds_k, "Diamonds"),
+        Pair(R.drawable.clubs_k, "Clover"),
+        Pair(R.drawable.spades_k, "Spades"),
     )
 
     private var score = 0
