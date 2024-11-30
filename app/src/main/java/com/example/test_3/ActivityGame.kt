@@ -81,9 +81,10 @@ class ActivityGame : AppCompatActivity() {
             updateCardImage()
         }
 
-        // Tillbaka-knappen
-        backButton.setOnClickListener {
-            finish()
+            // Vänta en stund innan vi döljer kortet igen
+            cardContainer.postDelayed({
+                flipToBack()
+            }, 1000)
         }
     }
 
