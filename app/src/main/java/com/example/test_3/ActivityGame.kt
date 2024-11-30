@@ -45,66 +45,24 @@ class ActivityGame : AppCompatActivity() {
         val backButton = findViewById<Button>(R.id.backButton)
         cardContainer = findViewById(R.id.cardImageContainer)
         cardFront = findViewById(R.id.cardFront)
+        cardFront.setImageResource(R.drawable.back) // Visa baksidan som standard
 
-        // Visa ett första slumpmässigt kort
-        updateCardImage()
-
-        // Kortanimering
-        cardContainer.setOnClickListener {
-            flipAnimation()
-        }
-
-        // Gissning: Röd (Hjärter, Ruter)
+        // Hantera knapptryck
         guessRedButton.setOnClickListener {
-            if (isGuessCorrect("Röd")) {
-                updateScore(+1, scoreTextView)
-            } else {
-                updateScore(-1, scoreTextView)
-            }
-            updateCardImage()
+            handleButtonClick("Red", +1, scoreTextView)
         }
-
-        // Gissning: Svart (Klöver, Spader)
         guessBlackButton.setOnClickListener {
-            if (isGuessCorrect("Svart")) {
-                updateScore(+1, scoreTextView)
-            } else {
-                updateScore(-1, scoreTextView)
-            }
-            updateCardImage()
+            handleButtonClick("Black", +1, scoreTextView)
         }
-
-        // Gissning: Hjärter
         guessHeartButton.setOnClickListener {
-            if (isGuessCorrect("Hjärter")) {
-                updateScore(+5, scoreTextView)
-            } else {
-                updateScore(-1, scoreTextView)
-            }
-            updateCardImage()
+            handleButtonClick("Hearts", +5, scoreTextView)
         }
-
-        // Gissning: Ruter
         guessDiamondButton.setOnClickListener {
-            if (isGuessCorrect("Ruter")) {
-                updateScore(+5, scoreTextView)
-            } else {
-                updateScore(-1, scoreTextView)
-            }
-            updateCardImage()
+            handleButtonClick("Diamonds", +5, scoreTextView)
         }
-
-        // Gissning: Klöver
         guessClubButton.setOnClickListener {
-            if (isGuessCorrect("Klöver")) {
-                updateScore(+5, scoreTextView)
-            } else {
-                updateScore(-1, scoreTextView)
-            }
-            updateCardImage()
+            handleButtonClick("Clover", +5, scoreTextView)
         }
-
-        // Gissning: Spader
         guessSpadeButton.setOnClickListener {
             if (isGuessCorrect("Spader")) {
                 updateScore(+5, scoreTextView)
