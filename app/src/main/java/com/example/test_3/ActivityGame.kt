@@ -135,31 +135,60 @@ class ActivityGame : AppCompatActivity() {
             .show()
     }
 
-    /**
-     * Animering för kortvändning
-     */
-    private fun flipAnimation() {
+    // Animation
+    private fun flipToFront(onFlipEnd: () -> Unit) {
         val animeToFront = ObjectAnimator.ofFloat(cardContainer, "scaleX", 1f, 0f)
         val animeToBack = ObjectAnimator.ofFloat(cardContainer, "scaleX", 0f, 1f)
 
         animeToFront.interpolator = DecelerateInterpolator()
         animeToBack.interpolator = AccelerateInterpolator()
 
-        animeToFront.duration = 1000
-        animeToBack.duration = 1000
+        animeToFront.duration = 300
+        animeToBack.duration = 300
 
         animeToFront.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator) {
                 super.onAnimationEnd(animation)
 
-                // Byt bild under animeringen
-                if (cardFront.drawable.constantState == resources.getDrawable(R.drawable.clubs_k).constantState) {
-                    cardFront.setImageResource(R.drawable.diamonds_k)
-                } else {
-                    cardFront.setImageResource(R.drawable.clubs_k)
-                }
+                // Välj ett nytt kort och visa dess bild
+                updateCardImage()
 
-                // Starta andra delen av animationen
+                // Starta nästa del av animationen
+                animeToBack.start()
+            }
+        })
+
+        animeToBack.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator) {
+                super.onAnimationEnd(animation)
+                // Kör vidare logik efter att framsidan visas
+                onFlipEnd()
+            }
+        })
+
+        animeToFront.start()
+    }
+
+
+    // Till baka
+    private fun flipToBack() {
+        val animeToFront = ObjectAnimator.ofFloat(cardContainer, "scaleX", 1f, 0f)
+        val animeToBack = ObjectAnimator.ofFloat(cardContainer, "scaleX", 0f, 1f)
+
+        animeToFront.interpolator = DecelerateInterpolator()
+        animeToBack.interpolator = AccelerateInterpolator()
+
+        animeToFront.duration = 300
+        animeToBack.duration = 300
+
+        animeToFront.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator) {
+                super.onAnimationEnd(animation)
+
+                // Visa baksidan av kortet
+                cardFront.setImageResource(R.drawable.back)
+
+                // Starta nästa del av animationen
                 animeToBack.start()
             }
         })
